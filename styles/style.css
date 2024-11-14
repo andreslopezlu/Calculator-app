@@ -1,17 +1,187 @@
 :root {
     --letter1: "League Spartan";
     --letter2: "sans-serif";
-    --color1: #FFF;
-    --color2: #3A4663;
-    --color3: #242D44;
-    --color4: #D03F2F;
-    --color5: #181F33;
-    --color5: #647198;
-    --color6: #EAE3DC;
-    --color7: #434A59;
+
+    --color1a: #3A4663;
+    --color2a: #FFF;
+    --color3a: #242D44;
+    --color4a: #D03F2F;
+    --color5a: #181F33;
+    --color6a: #EAE3DC;
+    --color7a: #434A59;
+    --color8a: #647198;
+
+    --color1b: #E6E6E6;
+    --color2b: #36362C;
+    --color3b: #D2CDCD;
+    --color4b: #C85402;
+    --color5b: #EEE;
+    --color6b: #E5E4E1;
+    --color7b: #378187;
     
+    --color1c: #17062A;
+    --color2c: #FFE53D;
+    --color3c: #1E0936;
+    --color4c: #00DED0;
+    --color5c: #331C4D;
+    --color6c: #56077C;
+}
+
+.main-container {
+    padding: 30px 6.5%;
+}
+
+.background-color1a {
+    background-color: var(--color1a);
+}
+
+.text-color2a {
+    color: var(--color2a);
+}
+
+.background-color3a {
+    background-color: var(--color3a);
+}
+
+.background-color4a {
+    background-color: var(--color4a);
+}
+
+.background-color5a {
+    background-color: var(--color5a);
+}
+
+.background-color6a {
+    background-color: var(--color6a);
+}
+
+.text-color7a {
+    color: var(--color7a);
+}
+
+.background-color8a {
+    background-color: var(--color8a);
 }
 
 html {
     font-size: 62.5%;
+    font-family: var(--letter1), var(--letter2);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    align-items: flex-end;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.533px;
+}
+
+.theme {
+    display: flex;
+    width: 43%;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.theme__title {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.theme-selector {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 51%;
+    justify-content: space-between;
+}
+
+.theme-ids {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.selector {
+    display: flex;
+    border-radius: 13px;
+    padding: 5px;
+}
+
+.switch {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.calculation {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 7.5%;
+    padding-top: 29px;
+    padding-bottom: 22px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.calculation__text {
+    text-align: right;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.667px;
+}
+
+.keyboard {
+    border-radius: 10px;
+    padding: 24px 7.5%;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    gap: 15px 15px;
+}
+
+.number-key {
+    height: 64px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.533px;
+    padding: 0;
+}
+
+.reset, .delete, .equal {
+    font-size: 2rem;
+}
+
+.reset {
+    grid-area: 5 / 1 / 5 / 3;
+}
+
+.equal {
+    grid-area: 5 / 3 / 5 / 5;
 }
