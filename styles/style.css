@@ -1,0 +1,17 @@
+:root {
+    --letter1: "League Spartan";
+    --letter2: "sans-serif";
+    --color1: #FFF;
+    --color2: #3A4663;
+    --color3: #242D44;
+    --color4: #D03F2F;
+    --color5: #181F33;
+    --color5: #647198;
+    --color6: #EAE3DC;
+    --color7: #434A59;
+    
+}
+
+html {
+    font-size: 62.5%;
+}
