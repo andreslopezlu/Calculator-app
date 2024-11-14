@@ -10,6 +10,9 @@
     --color6a: #EAE3DC;
     --color7a: #434A59;
     --color8a: #647198;
+    --color9a: #FFFFFE;
+    --color10a: #A2B2E1;
+    --color11a: #F96B5B;
 
     --color1b: #E6E6E6;
     --color2b: #36362C;
@@ -59,8 +62,18 @@
     color: var(--color7a);
 }
 
+.background-color7a {
+    color: var(--color7a);
+}
+
 .background-color8a {
     background-color: var(--color8a);
+}
+
+.common-text {
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 html {
@@ -79,9 +92,6 @@ header{
 .main-title {
     text-align: center;
     font-size: 3.2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     letter-spacing: -0.533px;
 }
 
@@ -95,9 +105,6 @@ header{
 .theme__title {
     text-align: center;
     font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     letter-spacing: 1px;
 }
 
@@ -107,30 +114,47 @@ header{
     flex-wrap: nowrap;
     width: 51%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .theme-ids {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
+    display: grid;
+    justify-self: center;
+    width: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
     margin: 0 auto;
     text-align: center;
     font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    grid-template: 1fr / repeat(3, 1fr);
 }
 
 .selector {
-    display: flex;
+    display: grid;
     border-radius: 13px;
     padding: 5px;
+    grid-template: 1fr / repeat(3, 1fr);
+    width: 90%;
 }
 
-.switch {
+.switch1, .switch2, .switch3 {
     width: 16px;
     height: 16px;
     border-radius: 50%;
+    z-index: 1;
+    justify-self: center;
+}
+
+.switch-location--left {
+    grid-area: 1 / 1 / 1 / 1;
+}
+
+.switch-location--center {
+    grid-area: 1 / 2 / 1 / 3;
+}
+
+.switch-location--right {
+    grid-area: 1 / 3 / 1 / 4;
 }
 
 .calculation {
@@ -147,9 +171,6 @@ header{
 .calculation__text {
     text-align: right;
     font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     letter-spacing: -0.667px;
 }
 
@@ -167,15 +188,27 @@ header{
     border: none;
     text-align: center;
     font-size: 3.2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     letter-spacing: -0.533px;
     padding: 0;
 }
 
+.number-key:hover {
+    background-color: var(--color9a);
+    cursor: pointer;
+}
+
 .reset, .delete, .equal {
     font-size: 2rem;
+}
+
+.reset:hover, .delete:hover {
+    background-color: var(--color10a);
+    cursor: pointer;
+}
+
+.equal:hover {
+    background-color: var(--color11a);
+    cursor: pointer;
 }
 
 .reset {
