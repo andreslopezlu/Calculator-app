@@ -1,0 +1,31 @@
+:root {
+    --letter1: "League Spartan";
+    --letter2: "sans-serif";
+
+    --color1a: #3A4663;
+    --color2a: #FFF;
+    --color3a: #242D44;
+    --color4a: #D03F2F;
+    --color5a: #181F33;
+    --color6a: #EAE3DC;
+    --color7a: #434A59;
+    --color8a: #647198;
+    --color9a: #FFFFFE;
+    --color10a: #A2B2E1;
+    --color11a: #F96B5B;
+
+    --color1b: #E6E6E6;
+    --color2b: #36362C;
+    --color3b: #D2CDCD;
+    --color4b: #C85402;
+    --color5b: #EEE;
+    --color6b: #E5E4E1;
+    --color7b: #378187;
+    
+    --color1c: #17062A;
+    --color2c: #FFE53D;
+    --color3c: #1E0936;
+    --color4c: #00DED0;
+    --color5c: #331C4D;
+    --color6c: #56077C;
+}

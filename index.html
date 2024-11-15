@@ -9,54 +9,58 @@
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=Q5wTP6NZr6yy&format=png&color=000000" type="image/x-icon">
         <link rel="stylesheet" href="./styles/resetter.css">
-        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/variables.css">
+        <link rel="stylesheet" href="./styles/common-styles.css">
+        <link rel="stylesheet" href="./styles/theme1.css">
+        <link rel="stylesheet" href="./styles/theme2.css">
+        <link rel="stylesheet" href="./styles/theme3.css">
     </head>
     <body>
         <main class="theme1">
-            <div class="main-container background-color1a">
+            <div class="background-color1a main-container">
                 <header>
-                    <h1 class="main-title text-color2a common-text">calc</h1>
+                    <h1 class="text-color2a main-title common-text">calc</h1>
                     <div class="theme">
-                        <p class="theme__title text-color2a common-text">THEME</p>
+                        <p class="text-color2a theme__title common-text">THEME</p>
                         <div class="theme-selector">
                             <div class="theme-ids">
-                                <p class="theme-ids__text text-color2a common-text">1</p>
-                                <p class="theme-ids__text text-color2a common-text">2</p>
-                                <p class="theme-ids__text text-color2a common-text">3</p>
+                                <p class="text-color2a theme-ids__text common-text">1</p>
+                                <p class="text-color2a theme-ids__text common-text">2</p>
+                                <p class="text-color2a theme-ids__text common-text">3</p>
                             </div>
-                            <div class="selector background-color3a">
-                                <div class="switch1 background-color4a switch-location--left"></div>
+                            <div class="background-color3a selector">
+                                <div class="background-color4a switch1 switch-location--left"></div>
                                 <div class="switch2"></div>
                                 <div class="switch3"></div>
                             </div>
                         </div>
                     </div>
                 </header>
-                <section class="calculation background-color5a">
-                    <p class="calculation__text text-color2a common-text">123</p>
+                <section class="background-color5a calculation">
+                    <p class="text-color2a calculation__text common-text">123</p>
                 </section>
-                <section class="keyboard background-color3a">
-                    <button class="seven number-key background-color6a text-color7a common-text">7</button>
-                    <button class="eight number-key background-color6a text-color7a common-text">8</button>
-                    <button class="nine number-key background-color6a text-color7a common-text">9</button>
-                    <button class="delete number-key background-color8a text-color2a common-text">DEL</button>
-                    <button class="four number-key background-color6a text-color7a common-text">4</button>
-                    <button class="five number-key background-color6a text-color7a common-text">5</button>
-                    <button class="six number-key background-color6a text-color7a common-text">6</button>
-                    <button class="plus number-key background-color6a text-color7a common-text">+</button>
-                    <button class="one number-key background-color6a text-color7a common-text">1</button>
-                    <button class="two number-key background-color6a text-color7a common-text">2</button>
-                    <button class="three number-key background-color6a text-color7a common-text">3</button>
-                    <button class="minus number-key background-color6a text-color7a common-text">-</button>
-                    <button class="dot number-key background-color6a text-color7a common-text">.</button>
-                    <button class="cero number-key background-color6a text-color7a common-text">0</button>
-                    <button class="division number-key background-color6a text-color7a common-text">/</button>
-                    <button class="multiplication number-key background-color6a text-color7a common-text">x</button>
-                    <button class="reset number-key background-color8a text-color2a common-text">RESET</button>
-                    <button class="equal number-key background-color4a text-color2a common-text">=</button>
+                <section class="background-color3a keyboard">
+                    <button class="background-color6a text-color7a seven number-key common-text"><p>7</p></button>
+                    <button class="background-color6a text-color7a eight number-key common-text">8</button>
+                    <button class="background-color6a text-color7a nine number-key common-text">9</button>
+                    <button class="background-color8a text-color2a delete number-key common-text">DEL</button>
+                    <button class="background-color6a text-color7a four number-key common-text">4</button>
+                    <button class="background-color6a text-color7a five number-key common-text">5</button>
+                    <button class="background-color6a text-color7a six number-key common-text">6</button>
+                    <button class="background-color6a text-color7a plus number-key common-text">+</button>
+                    <button class="background-color6a text-color7a one number-key common-text">1</button>
+                    <button class="background-color6a text-color7a two number-key common-text">2</button>
+                    <button class="background-color6a text-color7a three number-key common-text">3</button>
+                    <button class="background-color6a text-color7a minus number-key common-text">-</button>
+                    <button class="background-color6a text-color7a dot number-key common-text">.</button>
+                    <button class="background-color6a text-color7a cero number-key common-text">0</button>
+                    <button class="background-color6a text-color7a division number-key common-text">/</button>
+                    <button class="background-color6a text-color7a multiplication number-key common-text">x</button>
+                    <button class="background-color8a text-color2a reset number-key common-text">RESET</button>
+                    <button class="background-color4a text-color2a equal number-key common-text">=</button>
                 </section>
             </div>
-            <script src="script.js"></script>
+            <script src="./scripts/changeThemeSwitch.js"></script>
         </main>
 </body>
 </html>

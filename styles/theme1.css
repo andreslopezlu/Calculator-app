@@ -1,0 +1,47 @@
+.background-color1a {
+    background-color: var(--color1a);
+}
+
+.text-color2a {
+    color: var(--color2a);
+}
+
+.background-color3a {
+    background-color: var(--color3a);
+}
+
+.background-color4a {
+    background-color: var(--color4a);
+}
+
+.background-color5a {
+    background-color: var(--color5a);
+}
+
+.background-color6a {
+    background-color: var(--color6a);
+}
+
+.text-color7a {
+    color: var(--color7a);
+}
+
+.background-color8a {
+    background-color: var(--color8a);
+}
+
+.number-key:hover {
+    background-color: var(--color9a);
+    cursor: pointer;
+}
+
+.reset:hover, .delete:hover {
+    background-color: var(--color10a);
+    cursor: pointer;
+}
+
+.equal:hover {
+    background-color: var(--color11a);
+    cursor: pointer;
+}
+
