@@ -30,18 +30,15 @@
     background-color: var(--color8a);
 }
 
-.number-key:hover {
+.number-key-hover1:hover {
     background-color: var(--color9a);
-    cursor: pointer;
 }
 
-.reset:hover, .delete:hover {
+.reset-hover1:hover, .delete-hover1:hover {
     background-color: var(--color10a);
-    cursor: pointer;
 }
 
-.equal:hover {
+.equal-hover1:hover {
     background-color: var(--color11a);
-    cursor: pointer;
 }
 

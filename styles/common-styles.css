@@ -67,6 +67,7 @@ header{
     padding: 5px;
     grid-template: 1fr / repeat(3, 1fr);
     width: 90%;
+    cursor: pointer;
 }
 
 .switch1, .switch2, .switch3 {
@@ -134,4 +135,16 @@ header{
 
 .reset, .delete, .equal {
     font-size: 2rem;
+}
+
+.number-key:hover {
+    cursor: pointer;
+}
+
+.reset:hover, .delete:hover {
+    cursor: pointer;
+}
+
+.equal:hover {
+    cursor: pointer;
 }

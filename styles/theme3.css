@@ -29,3 +29,15 @@
 .background-color8c {
     background-color: var(--color6c);
 }
+
+.number-key-hover3:hover {
+    background-color: var(--color7c);
+}
+
+.reset-hover3:hover, .delete-hover3:hover {
+    background-color: var(--color8c);
+}
+
+.equal-hover3:hover {
+    background-color: var(--color9c);
+}

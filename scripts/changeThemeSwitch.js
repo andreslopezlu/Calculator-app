@@ -6,6 +6,17 @@ const switch3 = document.querySelector(".switch3")
 
 const nodes = document.querySelectorAll("*")
 
+window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === "theme1") {
+        changeTheme1Switch()
+    } else if (savedTheme === "theme2") {
+        changeTheme2Switch()
+    } else {
+        changeTheme3Switch()
+    }
+})
+
 const theme1ToTheme2 = {
     "background-color1a": "background-color1b",
     "text-color2a": "text-color2b",
@@ -15,6 +26,10 @@ const theme1ToTheme2 = {
     "background-color6a": "background-color6b",
     "text-color7a": "text-color7b",
     "background-color8a": "background-color8b",
+    "number-key-hover1": "number-key-hover2",
+    "delete-hover1": "delete-hover2",
+    "reset-hover1": "reset-hover2",
+    "equal-hover1": "equal-hover2"
 }
 
 const theme1ToTheme3 = {
@@ -26,6 +41,10 @@ const theme1ToTheme3 = {
     "background-color6a": "background-color6c",
     "text-color7a": "text-color7c",
     "background-color8a": "background-color8c",
+    "number-key-hover1": "number-key-hover3",
+    "delete-hover1": "delete-hover3",
+    "reset-hover1": "reset-hover3",
+    "equal-hover1": "equal-hover3"
 }
 
 const theme2ToTheme1 = {
@@ -37,6 +56,10 @@ const theme2ToTheme1 = {
     "background-color6b": "background-color6a",
     "text-color7b": "text-color7a",
     "background-color8b": "background-color8a",
+    "number-key-hover2": "number-key-hover1",
+    "delete-hover2": "delete-hover1",
+    "reset-hover2": "reset-hover1",
+    "equal-hover2": "equal-hover1"
 }
 
 const theme2ToTheme3 = {
@@ -48,6 +71,10 @@ const theme2ToTheme3 = {
     "background-color6b": "background-color6c",
     "text-color7b": "text-color7c",
     "background-color8b": "background-color8c",
+    "number-key-hover2": "number-key-hover3",
+    "delete-hover2": "delete-hover3",
+    "reset-hover2": "reset-hover3",
+    "equal-hover2": "equal-hover3"
 }
 
 const theme3ToTheme1 = {
@@ -59,6 +86,10 @@ const theme3ToTheme1 = {
     "background-color6c": "background-color6a",
     "text-color7c": "text-color7a",
     "background-color8c": "background-color8a",
+    "number-key-hover3": "number-key-hover1",
+    "delete-hover3": "delete-hover1",
+    "reset-hover3": "reset-hover1",
+    "equal-hover3": "equal-hover1"
 }
 
 const theme3ToTheme2 = {
@@ -70,6 +101,10 @@ const theme3ToTheme2 = {
     "background-color6c": "background-color6b",
     "text-color7c": "text-color7b",
     "background-color8c": "background-color8b",
+    "number-key-hover3": "number-key-hover2",
+    "delete-hover3": "delete-hover2",
+    "reset-hover3": "reset-hover2",
+    "equal-hover3": "equal-hover2"
 }
 
 setTheme1 = () => {
@@ -88,6 +123,8 @@ setTheme1 = () => {
             }
         });
     }
+
+    localStorage.setItem("theme", "theme1")
 }
 
 setTheme2 = () => {
@@ -98,7 +135,7 @@ setTheme2 = () => {
             }
         });
     }
-
+    
     for (const key in theme3ToTheme2) {
         nodes.forEach(element => {
             if(element.classList.contains(key)){
@@ -106,6 +143,8 @@ setTheme2 = () => {
             }
         });
     }
+    
+    localStorage.setItem("theme", "theme2")
 }
 
 setTheme3 = () => {
@@ -116,7 +155,7 @@ setTheme3 = () => {
             }
         });
     }
-
+    
     for (const key in theme1ToTheme3) {
         nodes.forEach(element => {
             if(element.classList.contains(key)){
@@ -124,22 +163,22 @@ setTheme3 = () => {
             }
         });
     }
+
+    localStorage.setItem("theme", "theme3")
 }
 
 changeTheme1Switch = () => {
     if(switch2.classList.contains("switch-location--center")){
         switch2.classList.remove("background-color4b", "switch-location--center")
         switch1.classList.add("background-color4a", "switch-location--left")
-        main.classList.remove("theme2")
-        main.classList.add("theme1")
+        main.classList.replace("theme2", "theme1")
         setTheme1()
     }
     
     if(switch3.classList.contains("switch-location--right")){
         switch3.classList.remove("background-color4c", "switch-location--right")
         switch1.classList.add("background-color4a", "switch-location--left")
-        main.classList.remove("theme3")
-        main.classList.add("theme1")
+        main.classList.replace("theme3", "theme1")
         setTheme1()
     }
 }
@@ -148,16 +187,14 @@ changeTheme2Switch = () => {
     if(switch1.classList.contains("switch-location--left")){
         switch1.classList.remove("background-color4a", "switch-location--left")
         switch2.classList.add("background-color4b", "switch-location--center")
-        main.classList.remove("theme1")
-        main.classList.add("theme2")
+        main.classList.replace("theme1", "theme2")
         setTheme2()
     }
     
     if(switch3.classList.contains("switch-location--right")){
         switch3.classList.remove("background-color4c", "switch-location--right")
         switch2.classList.add("background-color4b", "switch-location--center")
-        main.classList.remove("theme3")
-        main.classList.add("theme2")
+        main.classList.replace("theme3", "theme2")
         setTheme2()
     }
 }
@@ -166,16 +203,14 @@ changeTheme3Switch = () => {
     if(switch1.classList.contains("switch-location--left")){
         switch1.classList.remove("background-color4a", "switch-location--left")
         switch3.classList.add("background-color4c", "switch-location--right")
-        main.classList.remove("theme1")
-        main.classList.add("theme3")
+        main.classList.replace("theme1", "theme3")
         setTheme3()
     }
     
     if(switch2.classList.contains("switch-location--center")){
         switch2.classList.remove("background-color4b", "switch-location--center")
         switch3.classList.add("background-color4c", "switch-location--right")
-        main.classList.remove("theme2")
-        main.classList.add("theme3")
+        main.classList.replace("theme2", "theme3")
         setTheme3()
     }
 }
