@@ -300,16 +300,48 @@ const dotClick = () => {
     }
 }
 
+const checkLast = () => {
+    const isDivision = calculationText.textContent.slice(-1) === "/"
+    const isMultiplication = calculationText.textContent.slice(-1) === "x"
+    const isCalculationEmpty = calculationText.textContent.length === 0
+    const isMinus = calculationText.textContent.slice(-1) === "-"
+    const isMinusMinus = calculationText.textContent.slice(-2) === "--"
+    const isMinusPlus = calculationText.textContent.slice(-2) === "-+"
+    const isPlus = calculationText.textContent.slice(-1) === "+"
+    const isPlusPlus = calculationText.textContent.slice(-2) === "++"
+    const isPlusMinus = calculationText.textContent.slice(-2) === "+-"
+    const isDivisionMinus = calculationText.textContent.slice(-2) === "/-"
+    const isDivisionPlus = calculationText.textContent.slice(-2) === "/+"
+    const isMultiplicationMinus = calculationText.textContent.slice(-2) === "x-"
+    const isMultiplicationPlus = calculationText.textContent.slice(-2) === "x+"
+    
+    return [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus]
+}
+
 const plusClick = () => {
-    calculationText.textContent.slice(-1) === "+" ? null : calculationText.textContent += "+"
+    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+
+    if (isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+
+    } else {
+        calculationText.textContent += "+"
+    }
 }
 
 const minusClick = () => {
-    calculationText.textContent.slice(-1) === "-" ? null : calculationText.textContent += "-"
+    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+
+    if (isMinusMinus || isMinusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+
+    } else {
+        calculationText.textContent += "-"
+    }
 }
 
 const divisionClick = () => {
-    if (calculationText.textContent.slice(-1) === "/" || (calculationText.textContent.length === 0)){
+    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+
+    if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
         
     } else {
         calculationText.textContent += "/";
@@ -317,7 +349,9 @@ const divisionClick = () => {
 }
 
 const multiplicationClick = () => {
-    if (calculationText.textContent.slice(-1) === "x" || (calculationText.textContent.length === 0)){
+    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+
+    if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
 
     } else {
         calculationText.textContent += "x";
