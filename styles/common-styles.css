@@ -99,6 +99,7 @@ header{
     padding-bottom: 22px;
     border-radius: 10px;
     margin-bottom: 24px;
+    min-height: 37px;
 }
 
 .calculation__text {
