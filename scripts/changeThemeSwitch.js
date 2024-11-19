@@ -321,7 +321,7 @@ const checkLast = () => {
 const plusClick = () => {
     const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if (isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "+"
@@ -331,7 +331,7 @@ const plusClick = () => {
 const minusClick = () => {
     const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isMinusMinus || isMinusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if (isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "-"
