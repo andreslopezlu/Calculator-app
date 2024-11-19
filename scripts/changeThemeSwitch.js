@@ -239,65 +239,53 @@ const changeTheme3Switch = () => {
 }
 
 const oneClick = () => {
-    calculationText.innerHTML += "1";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "1";
 }
 
 const twoClick = () => {
-    calculationText.innerHTML += "2";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "2";
 }
 
 const threeClick = () => {
-    calculationText.innerHTML += "3";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "3";
 }
 
 const fourClick = () => {
-    calculationText.innerHTML += "4";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "4";
 }
 
 const fiveClick = () => {
-    calculationText.innerHTML += "5";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "5";
 }
 
 const sixClick = () => {
-    calculationText.innerHTML += "6";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "6";
 }
 
 const sevenClick = () => {
-    calculationText.innerHTML += "7";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "7";
 }
 
 const eightClick = () => {
-    calculationText.innerHTML += "8";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "8";
 }
 
 const nineClick = () => {
-    calculationText.innerHTML += "9";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "9";
 }
 
 const ceroClick = () => {
-    calculationText.innerHTML += "0";
-    console.log(calculationText.innerHTML)
+    calculationText.textContent += "0";
 }
 
 const deleteClick = () => {
-    const currentCalculation = calculationText.innerHTML ;
+    const currentCalculation = calculationText.textContent ;
     const newValue = currentCalculation.slice(0, -1)
-    calculationText.innerHTML = newValue
-    console.log(calculationText.innerHTML)
+    calculationText.textContent = newValue
 }
 
 const resetClick = () => {
-    calculationText.innerHTML = ""
-    console.log(calculationText.innerHTML)
+    calculationText.textContent = ""
 }
 
 const equalClick = () => {
@@ -305,37 +293,34 @@ const equalClick = () => {
 }
 
 const dotClick = () => {
-    if (calculationText.innerHTML.slice(-1) === "."){
+    if (calculationText.textContent.slice(-1) === "."){
 
     } else {
-        calculationText.innerHTML += ".";
-        console.log(calculationText.innerHTML)
+        calculationText.textContent += ".";
     }
 }
 
 const plusClick = () => {
-    calculationText.innerHTML.slice(-1) === "+" ? null : calculationText.innerHTML += "+"
+    calculationText.textContent.slice(-1) === "+" ? null : calculationText.textContent += "+"
 }
 
 const minusClick = () => {
-    calculationText.innerHTML.slice(-1) === "-" ? null : calculationText.innerHTML += "-"
+    calculationText.textContent.slice(-1) === "-" ? null : calculationText.textContent += "-"
 }
 
 const divisionClick = () => {
-    if (calculationText.innerHTML.slice(-1) === "/" || (calculationText.innerHTML.length === 0)){
+    if (calculationText.textContent.slice(-1) === "/" || (calculationText.textContent.length === 0)){
         
     } else {
-        calculationText.innerHTML += "/";
-        console.log(calculationText.innerHTML)
+        calculationText.textContent += "/";
     }
 }
 
 const multiplicationClick = () => {
-    if (calculationText.innerHTML.slice(-1) === "x" || (calculationText.innerHTML.length === 0)){
+    if (calculationText.textContent.slice(-1) === "x" || (calculationText.textContent.length === 0)){
 
     } else {
-        calculationText.innerHTML += "x";
-        console.log(calculationText.innerHTML)
+        calculationText.textContent += "x";
     }
 }
 
