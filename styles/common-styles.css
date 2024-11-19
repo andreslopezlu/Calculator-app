@@ -94,9 +94,7 @@ header{
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
-    padding-right: 7.5%;
-    padding-top: 29px;
-    padding-bottom: 22px;
+    padding: 29px 7.5% 22px;
     border-radius: 10px;
     margin-bottom: 24px;
     min-height: 37px;
@@ -106,6 +104,8 @@ header{
     text-align: right;
     font-size: 4rem;
     letter-spacing: -0.667px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
 }
 
 .keyboard {
@@ -148,4 +148,8 @@ header{
 
 .equal:hover {
     cursor: pointer;
+}
+
+.test {
+    display: flex;
 }
