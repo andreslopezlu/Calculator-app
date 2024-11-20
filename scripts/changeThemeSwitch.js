@@ -8,6 +8,8 @@ const switch3 = document.querySelector(".switch3")
 
 const calculationText = document.querySelector(".calculation__text")
 
+const keyboard = document.querySelector(".keyboard")
+
 const oneButton = document.querySelector(".one")
 const twoButton = document.querySelector(".two")
 const threeButton = document.querySelector(".three")
@@ -358,6 +360,12 @@ const multiplicationClick = () => {
     }
 }
 
+const clicks = (event) => {
+    const keys = event.target.closest("button")
+    calc = calculationText.textContent
+    keys ? console.log(calc) : null
+}
+
 switch1.addEventListener("click", changeTheme1Switch)
 switch2.addEventListener("click", changeTheme2Switch)
 switch3.addEventListener("click", changeTheme3Switch)
@@ -380,3 +388,5 @@ plusButton.addEventListener("click", plusClick)
 minusButton.addEventListener("click", minusClick)
 divisionButton.addEventListener("click", divisionClick)
 multiplicationButton.addEventListener("click", multiplicationClick)
+
+keyboard.addEventListener("click", clicks)
