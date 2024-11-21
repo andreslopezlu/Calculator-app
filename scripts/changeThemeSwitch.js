@@ -31,6 +31,8 @@ const multiplicationButton = document.querySelector(".multiplication")
 
 const nodes = document.querySelectorAll("*")
 
+const regex = /([*\/]|\b\s*-|\b\s*\+)/g
+
 const theme1ToTheme2 = {
     "background-color1a": "background-color1b",
     "text-color2a": "text-color2b",
@@ -304,8 +306,9 @@ const dotClick = () => {
 
 const checkLast = () => {
     const isDivision = calculationText.textContent.slice(-1) === "/"
-    const isMultiplication = calculationText.textContent.slice(-1) === "x"
+    const isMultiplication = calculationText.textContent.slice(-1) === "*"
     const isCalculationEmpty = calculationText.textContent.length === 0
+    const isCalculationLenOne = calculationText.textContent.length === 1
     const isMinus = calculationText.textContent.slice(-1) === "-"
     const isMinusMinus = calculationText.textContent.slice(-2) === "--"
     const isMinusPlus = calculationText.textContent.slice(-2) === "-+"
@@ -314,16 +317,16 @@ const checkLast = () => {
     const isPlusMinus = calculationText.textContent.slice(-2) === "+-"
     const isDivisionMinus = calculationText.textContent.slice(-2) === "/-"
     const isDivisionPlus = calculationText.textContent.slice(-2) === "/+"
-    const isMultiplicationMinus = calculationText.textContent.slice(-2) === "x-"
-    const isMultiplicationPlus = calculationText.textContent.slice(-2) === "x+"
+    const isMultiplicationMinus = calculationText.textContent.slice(-2) === "*-"
+    const isMultiplicationPlus = calculationText.textContent.slice(-2) === "*+"
     
-    return [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus]
+    return [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus]
 }
 
 const plusClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if ((isCalculationLenOne && (isPlus || isMinus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "+"
@@ -331,9 +334,9 @@ const plusClick = () => {
 }
 
 const minusClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if ((isCalculationLenOne && (isMinus || isPlus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "-"
@@ -341,7 +344,7 @@ const minusClick = () => {
 }
 
 const divisionClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
     if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
         
@@ -351,19 +354,21 @@ const divisionClick = () => {
 }
 
 const multiplicationClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
     if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
 
     } else {
-        calculationText.textContent += "x";
+        calculationText.textContent += "*";
     }
 }
 
 const clicks = (event) => {
     const keys = event.target.closest("button")
-    calc = calculationText.textContent
+    const calc = calculationText.textContent
     keys ? console.log(calc) : null
+    const calcList = calculationText.textContent.split(regex)
+    console.log(calcList)
 }
 
 switch1.addEventListener("click", changeTheme1Switch)
