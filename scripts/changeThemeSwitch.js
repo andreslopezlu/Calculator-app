@@ -297,7 +297,9 @@ const equalClick = () => {
 }
 
 const dotClick = () => {
-    if (calculationText.textContent.slice(-1) === "."){
+    const isDotIncluded = calculationText.textContent.split(regex).slice(-1)[0].includes(".")
+
+    if (calculationText.textContent.slice(-1) === "." || isDotIncluded){
 
     } else {
         calculationText.textContent += ".";
@@ -305,6 +307,7 @@ const dotClick = () => {
 }
 
 const checkLast = () => {
+    const isDot = calculationText.textContent.slice(-1) === "."
     const isDivision = calculationText.textContent.slice(-1) === "/"
     const isMultiplication = calculationText.textContent.slice(-1) === "*"
     const isCalculationEmpty = calculationText.textContent.length === 0
@@ -320,13 +323,13 @@ const checkLast = () => {
     const isMultiplicationMinus = calculationText.textContent.slice(-2) === "*-"
     const isMultiplicationPlus = calculationText.textContent.slice(-2) === "*+"
     
-    return [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus]
+    return [isDot, isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus]
 }
 
 const plusClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDot, isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if ((isCalculationLenOne && (isPlus || isMinus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if (isDot || (isCalculationLenOne && (isPlus || isMinus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "+"
@@ -334,9 +337,9 @@ const plusClick = () => {
 }
 
 const minusClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDot, isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if ((isCalculationLenOne && (isMinus || isPlus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
+    if (isDot || (isCalculationLenOne && (isMinus || isPlus)) || isMinusMinus || isMinusPlus || isPlusPlus || isPlusMinus || isDivisionMinus || isDivisionPlus || isMultiplicationMinus || isMultiplicationPlus){
 
     } else {
         calculationText.textContent += "-"
@@ -344,9 +347,9 @@ const minusClick = () => {
 }
 
 const divisionClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDot, isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
+    if (isDot || isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
         
     } else {
         calculationText.textContent += "/";
@@ -354,9 +357,9 @@ const divisionClick = () => {
 }
 
 const multiplicationClick = () => {
-    const [isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
+    const [isDot, isDivision, isMultiplication, isCalculationEmpty, isCalculationLenOne, isMinus, isMinusMinus, isMinusPlus, isPlus, isPlusPlus, isPlusMinus, isDivisionMinus, isDivisionPlus, isMultiplicationMinus, isMultiplicationPlus] = checkLast()
 
-    if (isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
+    if (isDot || isDivision || isMultiplication || isCalculationEmpty || isMinus || isPlus){
 
     } else {
         calculationText.textContent += "*";
