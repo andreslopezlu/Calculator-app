@@ -3,6 +3,10 @@ html {
     font-family: var(--letter1), var(--letter2);
 }
 
+.display-hidden {
+    visibility: hidden;
+}
+
 .common-text {
     font-style: normal;
     font-weight: 700;

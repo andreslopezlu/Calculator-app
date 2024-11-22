@@ -17,6 +17,7 @@ const persistTheme = () => {
     } else {
         changeTheme3Switch()
     }
+    document.querySelector("main").classList.remove("display-hidden")
 }
 
 const setTheme1 = () => {
