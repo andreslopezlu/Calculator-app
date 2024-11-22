@@ -90,4 +90,6 @@ const theme3ToTheme2 = {
 
 const regex = /([*\/]|\b\s*-|\b\s*\+)/g
 
-export {theme1ToTheme2, theme1ToTheme3, theme2ToTheme1, theme2ToTheme3, theme3ToTheme1, theme3ToTheme2, regex}
+const calculationText = document.querySelector(".calculation__text")
+
+export {theme1ToTheme2, theme1ToTheme3, theme2ToTheme1, theme2ToTheme3, theme3ToTheme1, theme3ToTheme2, regex, calculationText}
