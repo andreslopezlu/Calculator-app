@@ -56,7 +56,12 @@ const resetClick = () => {
 }
 
 const equalClick = () => {
-
+    const calcList = calculationText.textContent.split(regex)
+    const resultDiv = calculateDivision(calcList)
+    const resultMult = calculateMultiplication(resultDiv)
+    const resultSub = calculateSubtraction(resultMult)
+    const result = calculateAddition(resultSub)
+    document.querySelector(".calculation__text").textContent = result[0].toFixed(3)
 }
 
 const dotClick = () => {
@@ -112,9 +117,121 @@ const multiplicationClick = () => {
 const clicks = (event) => {
     const keys = event.target.closest("button")
     const calc = calculationText.textContent
-    keys ? console.log(calc) : null
+    // keys ? console.log(calc) : null
     const calcList = calculationText.textContent.split(regex)
     console.log(calcList)
+}
+
+const firstDivisionIndex = (calcList) => {
+    const index = calcList.indexOf("/")
+    return index
+}
+
+const firstMultiplicationIndex = (calcList) => {
+    const index = calcList.indexOf("*")
+    return index
+}
+
+const firstMinusIndex = (calcList) => {
+    const index = calcList.indexOf("-")
+    return index
+}
+
+const firstPlusIndex = (calcList) => {
+    const index = calcList.indexOf("+")
+    return index
+}
+
+const calculateDivision = (calcList) => {
+
+    let modifiedList = calcList
+
+    let divIndex = firstDivisionIndex(calcList)
+    let leftIndex = null
+    let rightIndex = null
+    let leftValue = null
+    let rightValue = null
+    let result = null
+
+    while (divIndex !== -1){
+        leftIndex = divIndex-1
+        rightIndex = divIndex+1
+        leftValue = typeof modifiedList[leftIndex] === "string" ? parseFloat(modifiedList[leftIndex]) : modifiedList[leftIndex]
+        rightValue = typeof modifiedList[rightIndex] === "string" ? parseFloat(modifiedList[rightIndex]) : modifiedList[rightIndex]
+        result = leftValue/rightValue
+        modifiedList.splice(leftIndex, 3, result)
+        divIndex = firstDivisionIndex(modifiedList)
+    }
+    return modifiedList
+}
+
+const calculateMultiplication = (resultDiv) => {
+
+    let modifiedList = resultDiv
+
+    let multIndex = firstMultiplicationIndex(resultDiv)
+    let leftIndex = null
+    let rightIndex = null
+    let leftValue = null
+    let rightValue = null
+    let result = null
+
+    while (multIndex !== -1){
+        leftIndex = multIndex-1
+        rightIndex = multIndex+1
+        leftValue = typeof modifiedList[leftIndex] === "string" ? parseFloat(modifiedList[leftIndex]) : modifiedList[leftIndex]
+        rightValue = typeof modifiedList[rightIndex] === "string" ? parseFloat(modifiedList[rightIndex]) : modifiedList[rightIndex]
+        result = leftValue*rightValue
+        modifiedList.splice(leftIndex, 3, result)
+        multIndex = firstMultiplicationIndex(modifiedList)
+    }
+    return modifiedList
+}
+
+const calculateSubtraction = (resultMult) => {
+
+    let modifiedList = resultMult
+
+    let minusIndex = firstMinusIndex(resultMult)
+    let leftIndex = null
+    let rightIndex = null
+    let leftValue = null
+    let rightValue = null
+    let result = null
+
+    while (minusIndex !== -1){
+        leftIndex = minusIndex-1
+        rightIndex = minusIndex+1
+        leftValue = typeof modifiedList[leftIndex] === "string" ? parseFloat(modifiedList[leftIndex]) : modifiedList[leftIndex]
+        rightValue = typeof modifiedList[rightIndex] === "string" ? parseFloat(modifiedList[rightIndex]) : modifiedList[rightIndex]
+        result = leftValue-rightValue
+        modifiedList.splice(leftIndex, 3, result)
+        minusIndex = firstMinusIndex(modifiedList)
+    }
+    return modifiedList
+}
+
+const calculateAddition = (resultSub) => {
+
+    let modifiedList = resultSub
+
+    let plusIndex = firstPlusIndex(resultSub)
+    let leftIndex = null
+    let rightIndex = null
+    let leftValue = null
+    let rightValue = null
+    let result = null
+
+    while (plusIndex !== -1){
+        leftIndex = plusIndex-1
+        rightIndex = plusIndex+1
+        leftValue = typeof modifiedList[leftIndex] === "string" ? parseFloat(modifiedList[leftIndex]) : modifiedList[leftIndex]
+        rightValue = typeof modifiedList[rightIndex] === "string" ? parseFloat(modifiedList[rightIndex]) : modifiedList[rightIndex]
+        result = leftValue+rightValue
+        modifiedList.splice(leftIndex, 3, result)
+        plusIndex = firstPlusIndex(modifiedList)
+    }
+    return modifiedList
 }
 
 oneButton.addEventListener("click", oneClick)
