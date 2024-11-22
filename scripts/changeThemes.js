@@ -1,127 +1,7 @@
-const nums = "0123456789"
+import {theme1ToTheme2, theme1ToTheme3, theme2ToTheme1, theme2ToTheme3, theme3ToTheme1, theme3ToTheme2, regex} from "./constants.js"
 
-const main = document.querySelector("main")
-
-const switch1 = document.querySelector(".switch1")
-const switch2 = document.querySelector(".switch2")
-const switch3 = document.querySelector(".switch3")
-
-const calculationText = document.querySelector(".calculation__text")
-
-const keyboard = document.querySelector(".keyboard")
-
-const oneButton = document.querySelector(".one")
-const twoButton = document.querySelector(".two")
-const threeButton = document.querySelector(".three")
-const fourButton = document.querySelector(".four")
-const fiveButton = document.querySelector(".five")
-const sixButton = document.querySelector(".six")
-const sevenButton = document.querySelector(".seven")
-const eightButton = document.querySelector(".eight")
-const nineButton = document.querySelector(".nine")
-const ceroButton = document.querySelector(".cero")
-const deleteButton = document.querySelector(".delete")
-const resetButton = document.querySelector(".reset")
-const equalButton = document.querySelector(".equal")
-const dotButton = document.querySelector(".dot")
-const plusButton = document.querySelector(".plus")
-const minusButton = document.querySelector(".minus")
-const divisionButton = document.querySelector(".division")
-const multiplicationButton = document.querySelector(".multiplication")
-
-const nodes = document.querySelectorAll("*")
-
-const regex = /([*\/]|\b\s*-|\b\s*\+)/g
-
-const theme1ToTheme2 = {
-    "background-color1a": "background-color1b",
-    "text-color2a": "text-color2b",
-    "background-color3a": "background-color3b",
-    "background-color4a": "background-color4b",
-    "background-color5a": "background-color5b",
-    "background-color6a": "background-color6b",
-    "text-color7a": "text-color7b",
-    "background-color8a": "background-color8b",
-    "number-key-hover1": "number-key-hover2",
-    "delete-hover1": "delete-hover2",
-    "reset-hover1": "reset-hover2",
-    "equal-hover1": "equal-hover2"
-}
-
-const theme1ToTheme3 = {
-    "background-color1a": "background-color1c",
-    "text-color2a": "text-color2c",
-    "background-color3a": "background-color3c",
-    "background-color4a": "background-color4c",
-    "background-color5a": "background-color5c",
-    "background-color6a": "background-color6c",
-    "text-color7a": "text-color7c",
-    "background-color8a": "background-color8c",
-    "number-key-hover1": "number-key-hover3",
-    "delete-hover1": "delete-hover3",
-    "reset-hover1": "reset-hover3",
-    "equal-hover1": "equal-hover3"
-}
-
-const theme2ToTheme1 = {
-    "background-color1b": "background-color1a",
-    "text-color2b": "text-color2a",
-    "background-color3b": "background-color3a",
-    "background-color4b": "background-color4a",
-    "background-color5b": "background-color5a",
-    "background-color6b": "background-color6a",
-    "text-color7b": "text-color7a",
-    "background-color8b": "background-color8a",
-    "number-key-hover2": "number-key-hover1",
-    "delete-hover2": "delete-hover1",
-    "reset-hover2": "reset-hover1",
-    "equal-hover2": "equal-hover1"
-}
-
-const theme2ToTheme3 = {
-    "background-color1b": "background-color1c",
-    "text-color2b": "text-color2c",
-    "background-color3b": "background-color3c",
-    "background-color4b": "background-color4c",
-    "background-color5b": "background-color5c",
-    "background-color6b": "background-color6c",
-    "text-color7b": "text-color7c",
-    "background-color8b": "background-color8c",
-    "number-key-hover2": "number-key-hover3",
-    "delete-hover2": "delete-hover3",
-    "reset-hover2": "reset-hover3",
-    "equal-hover2": "equal-hover3"
-}
-
-const theme3ToTheme1 = {
-    "background-color1c": "background-color1a",
-    "text-color2c": "text-color2a",
-    "background-color3c": "background-color3a",
-    "background-color4c": "background-color4a",
-    "background-color5c": "background-color5a",
-    "background-color6c": "background-color6a",
-    "text-color7c": "text-color7a",
-    "background-color8c": "background-color8a",
-    "number-key-hover3": "number-key-hover1",
-    "delete-hover3": "delete-hover1",
-    "reset-hover3": "reset-hover1",
-    "equal-hover3": "equal-hover1"
-}
-
-const theme3ToTheme2 = {
-    "background-color1c": "background-color1b",
-    "text-color2c": "text-color2b",
-    "background-color3c": "background-color3b",
-    "background-color4c": "background-color4b",
-    "background-color5c": "background-color5b",
-    "background-color6c": "background-color6b",
-    "text-color7c": "text-color7b",
-    "background-color8c": "background-color8b",
-    "number-key-hover3": "number-key-hover2",
-    "delete-hover3": "delete-hover2",
-    "reset-hover3": "reset-hover2",
-    "equal-hover3": "equal-hover2"
-}
+import {main, switch1, switch2, switch3, calculationText, keyboard, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton, ceroButton, 
+    deleteButton, resetButton, equalButton, dotButton, plusButton, minusButton, divisionButton, multiplicationButton, nodes} from "./nodes.js"
 
 window.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem('theme')
@@ -132,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
         changeTheme3Switch()
     }
+    console.log(regex)
 })
 
 const setTheme1 = () => {
